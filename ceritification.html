@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Certificates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #4a6fa5;
@@ -112,7 +113,7 @@
         }
 
         .certificate::after {
-            content: attr(alt);
+            content: attr(data-title);
             position: absolute;
             bottom: 0;
             left: 0;
@@ -128,6 +129,32 @@
 
         .certificate:hover::after {
             transform: translateY(0);
+        }
+
+        .pdf-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+            color: #d32f2f;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .pdf-card i {
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: #e53935;
+        }
+
+        .pdf-card .pdf-name {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
         }
 
         /* Lightbox Styles */
@@ -272,26 +299,7 @@
 </head>
 <body>
     <h1>My Certificates</h1>
-    <div class="certificates">
-        <div class="certificate" onclick="openLightbox('block chain.jpg', 'Certificate 1')">
-            <img src="block chain.jpg" alt="Certificate 1">
-        </div>
-        <div class="certificate" onclick="openLightbox('basics python_page-0001.jpg', 'Certificate 2')">
-            <img src="basics python_page-0001.jpg" alt="Certificate 2">
-        </div>
-        <div class="certificate" onclick="openLightbox('godot.jpg', 'Certificate 3')">
-            <img src="godot.jpg" alt="Certificate 3">
-        </div>
-        <div class="certificate" onclick="openLightbox('datascience_page-0001.jpg', 'Certificate 4')">
-            <img src="datascience_page-0001.jpg" alt="Certificate 4">
-        </div>
-        <div class="certificate" onclick="openLightbox('intro ai_page-0001.jpg', 'Certificate 5')">
-            <img src="intro ai_page-0001.jpg" alt="Certificate 5">
-
-        </div> <div class="certificate" onclick="openLightbox('java_page-0001.jpg', 'Certificate 6')">
-            <img src="java_page-0001.jpg" alt="Certificate 6">
-        </div>
-    </div>
+    <div class="certificates" id="cert-container"></div>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
@@ -305,73 +313,118 @@
     </div>
 
     <script>
-        let currentImageIndex = 0;
-        const images = [
-            { src: 'block chain.jpg', caption: 'Certificate 1' },
-            { src: 'basics python_page-0001.jpg', caption: 'Certificate 2' },
-            { src: 'godot.jpg', caption: 'Certificate 3' },
-            { src: 'datascience_page-0001.jpg', caption: 'Certificate 4' },
-            { src: 'intro ai_page-0001.jpg', caption: 'Certificate 5' },
-            { src: 'java_page-0001.jpg', caption: 'Certificate 6' }
+        const certContainer = document.getElementById('cert-container');
+        const certificates = [
+            { type: 'image', src: 'certificate/7.png', title: 'Certificate 7' },
+            { type: 'image', src: 'certificate/8.png', title: 'Certificate 8' },
+            { type: 'pdf', src: 'certificate/Edureka - Internship Certificate.pdf', title: 'Edureka Internship' },
+            { type: 'pdf', src: 'certificate/Fullstake NM.pdf', title: 'Fullstack NM' },
+            { type: 'pdf', src: 'certificate/IBMDesign20250821-33-11nqsq.pdf', title: 'IBM Design' },
+            { type: 'pdf', src: 'certificate/KALAI GANESH R (2).pdf', title: 'Kalai Ganesh (2)' },
+            { type: 'pdf', src: 'certificate/Kalai Ganesh R (1).pdf', title: 'Kalai Ganesh (1)' },
+            { type: 'pdf', src: 'certificate/Kalai Ganesh R(cybersecurity internship).pdf', title: 'Cybersecurity' },
+            { type: 'pdf', src: 'certificate/NM_Certificate (1).pdf', title: 'NM Certificate (1)' },
+            { type: 'pdf', src: 'certificate/NM_Certificate (2).pdf', title: 'NM Certificate (2)' },
+            { type: 'pdf', src: 'certificate/NM_Certificate (3).pdf', title: 'NM Certificate (3)' },
+            { type: 'pdf', src: 'certificate/NM_Certificate.pdf', title: 'NM Certificate' },
+            { type: 'pdf', src: 'certificate/inforsis/basics python.pdf', title: 'Basics Python' },
+            { type: 'pdf', src: 'certificate/inforsis/datascience.pdf', title: 'Data Science' },
+            { type: 'pdf', src: 'certificate/inforsis/ethical hacking beginner course.pdf', title: 'Ethical Hacking' },
+            { type: 'pdf', src: 'certificate/inforsis/html course certificate.pdf', title: 'HTML Course' },
+            { type: 'pdf', src: 'certificate/inforsis/intro ai.pdf', title: 'Intro AI' },
+            { type: 'pdf', src: 'certificate/inforsis/java.pdf', title: 'Java' },
+            { type: 'pdf', src: 'certificate/inforsis/kalai ganesh.pdf', title: 'Kalai Ganesh' },
+            { type: 'pdf', src: 'certificate/inforsis/Blockchain & Hyperledger Fabric The Hyperledger Fabric.pdf', title: 'Blockchain' },
+            { type: 'pdf', src: 'certificate/inforsis/Spring Rest.pdf', title: 'Spring Rest' },
+            { type: 'pdf', src: 'certificate/inforsis/Spring base5.pdf', title: 'Spring Base5' },
+            { type: 'pdf', src: 'certificate/inforsis/Spring data jpa.pdf', title: 'Spring Data JPA' },
+            { type: 'pdf', src: 'certificate/inforsis/Sring JDBC.pdf', title: 'Spring JDBC' },
+            { type: 'pdf', src: 'certificate/Aws Certificate/main cource completion certificate of ml in aws.pdf', title: 'AWS ML' },
+            { type: 'pdf', src: 'certificate/Aws Certificate/REPORT.pdf', title: 'AWS Report' }
         ];
 
+        const images = certificates.filter(c => c.type === 'image');
+        let currentImageIndex = 0;
+
+        certificates.forEach((cert) => {
+            const div = document.createElement('div');
+            div.className = 'certificate';
+            div.setAttribute('data-title', cert.title);
+
+            if (cert.type === 'image') {
+                div.onclick = () => openLightbox(cert.src, cert.title);
+                const img = document.createElement('img');
+                img.src = cert.src;
+                img.alt = cert.title;
+                div.appendChild(img);
+            } else {
+                div.onclick = () => window.open(cert.src, '_blank');
+                const pdfCard = document.createElement('div');
+                pdfCard.className = 'pdf-card';
+                
+                const icon = document.createElement('i');
+                icon.className = 'fa-solid fa-file-pdf';
+                
+                const titleNode = document.createElement('div');
+                titleNode.className = 'pdf-name';
+                titleNode.textContent = cert.title;
+                
+                pdfCard.appendChild(icon);
+                pdfCard.appendChild(titleNode);
+                div.appendChild(pdfCard);
+            }
+            
+            certContainer.appendChild(div);
+        });
+
         function openLightbox(src, caption) {
-            // Find the index of the clicked image
             currentImageIndex = images.findIndex(img => img.src === src);
             updateLightbox();
             document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            document.body.style.overflow = 'auto'; 
         }
 
         function changeImage(direction) {
+            if(images.length === 0) return;
             currentImageIndex += direction;
-            
-            // Wrap around if at beginning or end
             if (currentImageIndex < 0) {
                 currentImageIndex = images.length - 1;
             } else if (currentImageIndex >= images.length) {
                 currentImageIndex = 0;
             }
-            
             updateLightbox();
         }
 
         function updateLightbox() {
+            if(images.length === 0) return;
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxCaption = document.getElementById('lightbox-caption');
             
             lightboxImg.src = images[currentImageIndex].src;
-            lightboxCaption.textContent = images[currentImageIndex].caption;
+            lightboxCaption.textContent = images[currentImageIndex].title;
             
-            // Add zoom-in animation when changing images
             lightboxImg.parentElement.style.animation = 'none';
-            void lightboxImg.parentElement.offsetWidth; // Trigger reflow
+            void lightboxImg.parentElement.offsetWidth;
             lightboxImg.parentElement.style.animation = 'zoomIn 0.3s ease';
         }
 
-        // Close lightbox when clicking outside the image
         document.getElementById('lightbox').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeLightbox();
             }
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             const lightbox = document.getElementById('lightbox');
             if (lightbox.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                } else if (e.key === 'ArrowLeft') {
-                    changeImage(-1);
-                } else if (e.key === 'ArrowRight') {
-                    changeImage(1);
-                }
+                if (e.key === 'Escape') closeLightbox();
+                else if (e.key === 'ArrowLeft') changeImage(-1);
+                else if (e.key === 'ArrowRight') changeImage(1);
             }
         });
     </script>
