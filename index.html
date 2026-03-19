@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styl.css">
+    <script src="https://kit.fontawesome.com/0f7eb861dc.js" crossorigin="anonymous"></script>
+    <script src="form-submit.js"></script>
+
+    
+</head>
+<body>
+ <div id="header">
+    <div class="container">
+        <nav>
+            <img src="Logo.png" alt="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href=ceritification.html">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <div class="main-profile">
+                <img src="profile pic.png" alt="Kalai Ganesh Profile Picture">
+            </div>
+            <p><span class="typing"></span></p>
+            <h1>Hi, I'm <span>Kalai Ganesh.R</span><br> from Ranipet</h1>
+        </div>
+
+    </div>
+ </div>  
+ <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1  glow-wrapper">
+                <img src="images/backgroung.img.jpg" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                    As a prompt engineer, I craft thoughtful and effective prompts that unlock the full potential of AI models. I understand the capabilities and limitations of AI and tailor my prompts to get the best results. I'm skilled at distilling complex ideas into concise, well-defined prompts that elicit specific information or insights. I enjoy experimenting with different prompts to find innovative solutions and refining them based on AI responses. My goal is to harness the power of AI and push its boundaries. I'm passionate about exploring new applications and use cases, and I'm always looking for ways to improve my prompt engineering skills.</p>
+                   
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>prompt engineer</span><br>I design and refine high-quality input prompts to effectively communicate with AI systems.</li>
+                            <li><span>Front-End Developer</span><br>Building responsive, accessible, and performance-optimized websites using HTML, CSS, JavaScript, and modern frameworks.</li>
+                            <li><span>UI/UX Designer</span><br>Designing user-centered interfaces with a focus on usability, aesthetics, and seamless cross-device experiences.</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024</span><br>I worked on a project focused on prompt engineering to develop Automated Document Editor ADE</li>
+                            <li><span>2024</span><br>I worked on the project based on the Game Designer / Developer, Broad Based Games </li>
+                                <li>• Developed a Displacement game using Godot Game Engine</li>
+                                <li> • Created 3D models and Levels using Blender</li> 
+                                <li>• Communicated and resolved bug fixes while implementing new features</li>  
+                                
+                                
+                               
+                            
+                            <li><span>2025</span><br> 
+                                <p>A classic Snake game built with HTML5 Canvas and JavaScript. Features include score tracking, increasing difficulty, and responsive controls. The game demonstrates object-oriented programming principles and canvas manipulation.</p>
+                                </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020</span><br>I have completed my secondary school certificate exam </li>
+                            <li><span>2021-2022</span><br>I have completed my +1 and +2 mpc stream </li>
+                            <li><span>2023-2026</span><br>I am pursuing a B.E in 3rd year in the CSE stream</li>
+                        </ul>
+                    </div>
+              </div>
+         </div>
+    </div>
+</div>` 
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>prompt engineer</h2>
+                <p>As a prompt engineer, I craft precise prompts to guide AI for optimal results.
+                    I specialize in refining language to maximize AI accuracy and performance</p>
+                    <a href="#">Learn more</a>
+            </div>  
+             <div>
+                <i class="fa-solid fa-pencil-ruler"></i>
+                <h2>UI/UX Designer</h2>
+                </p>As a UI/UX designer, I craft clean, user-friendly interfaces that enhance digital experiences.
+                I prioritize usability and visual appeal to ensure seamless user interaction....</p>
+                    <a href="#">Learn more</a>
+            </div> 
+            <div>
+                <i class="fa-brands fa-connectdevelop"></i>
+                 <h2>web developer</h2>
+                <p>As a web developer, I create responsive and interactive websites.
+                    I turn ideas into seamless digital experiences using modern web technologies.</p>
+
+                    <a href="#">Learn more</a>
+            </div>           
+        </div>
+    </div>
+</div>
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="project-1.png" alt="">
+                <div class="layer">
+                    <h3>Carbon Footprint Calculator</h3>
+                    <p>The Carbon Footprint Calculator helps users estimate their weekly CO₂ emissions based on daily habits like transport, energy use, diet, and waste.</p>
+                    <a href="https://carbonfootprintcalculator10a.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="\Users\User\Desktop\portfolio\project-2.png" alt="Snake Game Project">
+                <div class="layer">
+                    <h3>Snake Game</h3>
+                    <p>A classic Snake game built with HTML5 Canvas and JavaScript. Features include score tracking, increasing difficulty, and responsive controls. The game demonstrates object-oriented programming principles and canvas manipulation.</p>
+                    <a href="https://snakegame2005.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="project-3.png" alt="">
+                <div class="layer">
+                    <h3>online Shopping App</h3>
+                    <p>The app connects you to the talented people around the world. Download it from play store.</p>
+                    <a href="https://e-storeonlineshoping.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div> 
+        <a href="#" class="btn">See More</a>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>kalaiganeshramesh44@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>7013432071</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/harsha.682172?mibextid=ZbWKwL ">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://x.com/Harsha56858?t=t3wrtR_FodscFeopA_ozWg&s=09">
+                        <i class="fa-brands fa-twitter-square"></i>
+                    </a>
+                    <a href="https://www.instagram.com/harsha56858/?utm_source=ig_web_button_share_sheet">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/Kalai Ganesh R ">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+                <a href="Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">    
+        <p>copyright @ Kalai Ganesh. made with <i class="fa-solid fa-heart"></i>portfolio</p>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+</script>
+
+<script>
+
+var sidemenu  = document.getElementById("sidemenu");
+
+function openmenu(){
+    sidemenu.style.right = "0"
+}
+function closemenu(){
+    sidemenu.style.right = "-200px"
+}
+
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwkbZH7fnjMhIbvQigYhfcAjQns1hPyXU6kXVGH4dH_a_J82ayLSZNzO9RSlVO1g07IzQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response =>{
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML =  ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+
+
+
+
+
+<script>
+const roles = ["Front-End Developer", "UI/UX Designer", "Prompt Engineer"];
+const typingElement = document.querySelector(".typing");
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+  const currentRole = roles[roleIndex];
+  if (isDeleting) {
+    charIndex--;
+  } else {
+    charIndex++;
+  }
+
+  typingElement.textContent = currentRole.substring(0, charIndex);
+
+  if (!isDeleting && charIndex === currentRole.length) {
+    setTimeout(() => isDeleting = true, 1000); // Pause before deleting
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+  }
+
+  setTimeout(type, isDeleting ? 50 : 100); // Typing/deleting speed
+}
+
+type();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
